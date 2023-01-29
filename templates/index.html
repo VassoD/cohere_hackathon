@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Search News</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+  <h1>Search News</h1>
+  <form action="/" method="POST">
+    <label for="search_query">Search Query:</label>
+    <input type="text" id="search_query" name="search_query">
+    <input type="submit" value="Search">
+  </form>
+  {% if articles %}
+  <h2>Results: {{ articles|length }}</h2>
+  <div class="results_box">
+    <ul class="articles">
+      {% for article in articles %}
+      <div>{{ article.category }}</div>
+      <li><a href="{{ article.url }}" target="_blank">{{ article.title }}</a> by {{ article.author }}, score:
+        {{ article.score }}</li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+</body>
+
+</html>

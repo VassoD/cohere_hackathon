@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+form {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.articles {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.articles li {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.articles a {
+    color: rgb(51, 48, 102);
+    text-decoration: none;
+}
+
+.results_box {
+    width: 80%;
+    margin: 0 auto;
+    overflow-y: scroll;
+    height: 300px;
+}
