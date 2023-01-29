@@ -90,7 +90,3 @@ requests-file==1.5.1
 requests-unixsocket==0.2.0
 Scrapy==2.7.1
 SecretStorage==2.3.1
-ubuntu-advantage-tools==27.12
-unattended-upgrades==0.1
-unittest2==1.1.0
-update-checker==0.18.0
