@@ -78,10 +78,7 @@ pyOpenSSL==23.0.0
 pyparsing==3.0.9
 pyperclip==1.8.2
 pypi-install==0.0.5
-python-apt==2.0.0+ubuntu0.20.4.8
-python-dateutil==2.8.2
-python-debian===0.1.36ubuntu1
-python-dotenv==0.21.0
+python-dotenv==0.21.
 python3-xlib==0.15
 pytube==12.1.0
 replicate==0.4.0
