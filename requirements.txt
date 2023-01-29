@@ -34,9 +34,6 @@ decorator==5.1.1
 defer==1.0.6
 distro==1.4.0
 distro-info===0.23ubuntu1
-elastic-transport==8.4.0
-elasticsearch==8.6.1
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.1/en_core_web_sm-3.4.1-py3-none-any.whl
 entrypoints==0.3
 et-xmlfile==1.1.0
 exceptiongroup==1.1.0
@@ -95,9 +92,6 @@ networkx==2.8.8
 newsapi-python==0.2.6
 numpy==1.23.4
 oauthlib==3.1.0
-openai==0.25.0
-openai-whisper @ git+https://github.com/openai/whisper.git@4e635c66441dfae3c6c72365f802293afffca3ef
-opencv-python==4.7.0.68
 openpyxl==3.0.10
 outcome==1.2.0
 packaging==21.3
@@ -170,7 +164,6 @@ scipy==1.9.3
 Scrapy==2.7.1
 SecretStorage==2.3.1
 segtok==1.5.11
-selenium==4.7.1
 semantic-version==2.10.0
 semver==2.13.0
 service-identity==18.1.0
@@ -231,6 +224,5 @@ websockets==10.4
 Werkzeug==2.2.2
 wrapt==1.11.2
 wsproto==1.2.0
-yake @ git+https://github.com/LIAAD/yake@8d71d94ded93fb77f1361f62e5264f19b9c91cd7
 zipp==1.0.0
 zope.interface==5.5.2
