@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-  <title>Search News</title>
-  <link rel="stylesheet" href="../static/styles.css">
-</head>
-
-<body>
+  {% block content %}
   <h1>Search News</h1>
   <form action="/" method="POST">
     <label for="search_query">Search Query:</label>
@@ -25,6 +19,6 @@
       {% endif %}
     </ul>
   </div>
-</body>
-
-</html>
+  <!-- <script src="../static/main.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  {% endblock %}
