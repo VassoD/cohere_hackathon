@@ -22,4 +22,4 @@ python3-xlib==0.15
 pytube==12.1.0
 replicate==0.4.0
 Scrapy==2.7.2
-SecretStorage==2.3.1se
+SecretStorage==2.3.1
