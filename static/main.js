@@ -1,16 +1,28 @@
-// Get the input element
-var searchInput = document.getElementById("search_query");
+$(document).ready(function() {
+  $('#search_query').focus(function() {
+    if (this.value == 'Generate a News Headline') {
+      this.value = '';
+    }
+  });
 
-// Listen for keyup event on the input element
-searchInput.addEventListener("keyup", function() {
-  // Get the current search query
-  var searchQuery = this.value;
+  $('#search_query').blur(function() {
+    if (this.value == '') {
+      this.value = 'Generate a News Headline';
+    }
+  });
+});
 
-  // Make a GET request to the server with the search query as a query parameter
-  fetch(`/?search_query=${searchQuery}`)
-    .then(response => response.text())
-    .then(data => {
-      // Update the page with the returned data
-      document.getElementById("results").innerHTML = data;
-    });
+$(document).ready(function () {
+  $("#search_query").on("input", function () {
+      if ($(this).val().length > 0) {
+          $("#search-submit").removeAttr("disabled").css("background-color", "#B08383");
+          $("#search-submit").hover(function () {
+              $(this).css("background-color", "#ccc");
+          }, function () {  // on mouseout
+              $(this).css("background-color", "#B08383");
+          });
+      } else {
+          $("#search-submit").attr("disabled", "disabled").css("background-color", "#ccc");
+      }
+  });
 });

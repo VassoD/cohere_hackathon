@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 
-  {% block content %}
-  <h1>Search News</h1>
-  <form action="/" method="POST">
-    <label for="search_query">Search Query:</label>
-    <input type="text" id="search_query" name="search_query">
-    <input type="submit" value="Search">
-  </form>
-  {% if articles %}
-  <h2>Results: {{ articles|length }}</h2>
-  <div class="results_box">
-    <ul class="articles">
-      {% for article in articles %}
-      <div>{{ article.category }}</div>
-      <li><a href="{{ article.url }}" target="_blank">{{ article.title }}</a> by {{ article.author }}, score:
-        {{ article.score }}</li>
-      {% endfor %}
-      {% endif %}
-    </ul>
-  </div>
-  <!-- <script src="../static/main.js"></script> -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-  {% endblock %}
+{% block content %}
+<h1>Search News</h1>
+<form action="/" method="POST">
+  <label for="search_query" class="search-icon"></label>
+  <i class="fas fa-search"></i>
+
+  <input type="text" id="search_query" name="search_query" value="Generate a News Headline">
+  <input type="submit" id="search-submit" value="Search">
+</form>
+{% if articles %}
+<div class="results_box">
+  <p>Results: {{ articles|length }} articles found</p>
+  <ul class="articles">
+    {% for article in articles %}
+    <div class="simplebar">
+      <div class="article">
+        <li><i class="fas fa-newspaper"></i>
+          <a href="{{ article.url }}" target="_blank">{{ article.title }}</a><br>
+          Category: {{ article.category }} by {{ article.author }}</li>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </ul>
+</div>
+{% endblock %}
