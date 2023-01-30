@@ -4,7 +4,6 @@ ffmpeg-python==0.2.0
 Flask==2.2.2
 gitdb==4.0.10
 GitPython>=3.1.30
-
 Jinja2==3.1.2
 jsonpatch==1.22
 jsonpointer==2.0
@@ -21,5 +20,5 @@ python-dotenv==0.21.
 python3-xlib==0.15
 pytube==12.1.0
 replicate==0.4.0
-Scrapy==2.7.2
+Scrapy==2.7.1
 SecretStorage==2.3.1
