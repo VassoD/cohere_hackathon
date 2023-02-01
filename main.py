@@ -38,16 +38,30 @@ def search_articles(search_query):
         subreddit = reddit.subreddit(subreddit)
         for submission in subreddit.new(limit=100):
             if search_query.lower() in submission.title.lower():
+                #check the sentiment of this article
                 inputs=[submission.title]
                 response = co.classify(
                     model='large',
                     inputs=inputs,
-                    examples=examples,
-                )
-                matching_articles.append(
-                    {"title": submission.title, "id": submission.id, "category":subreddit_mapping[submission.subreddit.display_name],
-                     "score": submission.score, "url": submission.url, "author": submission.author}
-                )
+                    examples=examples)
+                #pulls out the dictionary of classifications
+                class = response.classifications['classifications']
+                #find the first output
+                class1 = class[0]
+                
+                #pulls the sentiment from the dictionary of first output 
+                sentiment = class1['prediction']
+                
+                #if this sentiment is what the user has typed in the search query
+                
+                if sentiment in search_query.lower():
+                    
+                    #then add the matching article 
+                    
+                    matching_articles.append(
+                        {"title": submission.title, "id": submission.id, "category":subreddit_mapping[submission.subreddit.display_name],
+                         "score": submission.score, "url": submission.url, "author": submission.author}
+                    )
     return matching_articles
 
 
