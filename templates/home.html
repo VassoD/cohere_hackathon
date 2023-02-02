@@ -10,7 +10,7 @@
   <input type="submit" id="search-submit" value="Search">
 </form>
 {% if articles %}
-<div class="results_box">
+<div id="results_box">
   <p>Results: {{ articles|length }} articles found</p>
   <ul class="articles">
     {% for article in articles %}
@@ -18,7 +18,7 @@
       <div class="article">
         <li><i class="fas fa-newspaper"></i>
           <a href="{{ article.url }}" target="_blank">{{ article.title }}</a><br>
-          Category: {{ article.category }} by {{ article.author }}</li>
+          Category: {{ article.category }} Date: {{ article.date }} {{article.color}}</li>
       </div>
     </div>
     {% endfor %}
