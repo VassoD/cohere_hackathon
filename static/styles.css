@@ -42,7 +42,7 @@ form {
     margin: 0 auto;
     overflow-y: scroll;
     /* style scroll overflow */
-    height: 400px;
+    height: 300px;
 }
 
 nav {
@@ -179,7 +179,6 @@ footer {
     margin-top: auto;
 }
 
-
 .title {
     display: flex;
     align-items: center;
@@ -200,6 +199,9 @@ a:hover,
     color: #B08383 !important;
 }
 
+.nav-item.active {
+    color: blue;
+}
 
 /* .call-to-action {
     display: flex;
