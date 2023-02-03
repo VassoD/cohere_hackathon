@@ -31,14 +31,22 @@ examples = [
 ]
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def home():
+    return render_template("home.html")
+
+@app.route("/ethics")
+def ethics():
+    return render_template("ethics.html")
+
+@app.route("/newsboy", methods=["GET", "POST"])
+def newsboy():
     if request.method == "POST":
         search_query = request.form["search_query"]
         matching_articles, prediction = search_articles(search_query)
         total_articles = len(matching_articles)
-        return render_template("home.html", articles=matching_articles, total_articles=total_articles, prediction=prediction)
-    return render_template("home.html")
+        return render_template("newsboy.html", articles=matching_articles, total_articles=total_articles, prediction=prediction)
+    return render_template("newsboy.html")
 
 def search_articles(search_query):
     #code to get the Reddit instance and subreddit_mapping
@@ -96,15 +104,6 @@ def search_articles(search_query):
                      "score": submission.score, "url": submission.url, "date": formatted_date}
                 )
     return matching_articles, prediction
-
-
-@app.route("/ethics")
-def ethics():
-    return render_template("ethics.html")
-
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 @app.route("/manifesto")
 def manifesto():

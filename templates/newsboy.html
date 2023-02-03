@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="center">
+  <img src="../static/images/newsboy.png" alt="Newsboy" width="200px">
+</div>
+<form action="/newsboy" method="POST">
+  <label for="search_query" class="search-icon"></label>
+  <i class="fas fa-search"></i>
+  <input type="text" id="search_query" name="search_query" value="Generate a News Headline" autocomplete="off">
+  <input type="submit" id="search-submit" value="Search">
+</form>
+{% if articles %}
+<div id="results_box">
+  <p>Results: {{ articles|length }} articles found</p>
+  <ul class="articles">
+    {% for article in articles %}
+    <div class="simplebar">
+      <div class="article">
+        <li><i class="fas fa-newspaper"></i>
+          <a href="{{ article.url }}" target="_blank">{{ article.title }}</a><br>
+          Category: {{ article.category }} Date: {{ article.date }} {{article.color}}</li>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </ul>
+</div>
+{% endblock %}

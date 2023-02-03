@@ -64,3 +64,28 @@ $(document).ready(function () {
 //         });
 
 // });
+
+
+// Get the footer element
+var footer = document.getElementById("footer");
+
+// Add an event listener for the scroll event
+window.addEventListener("scroll", function() {
+  // Get the current scroll position
+  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Get the height of the main content
+  var mainContentHeight = document.querySelector(".main-content").offsetHeight;
+
+  // Get the height of the viewport
+  var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  // Check if the user has scrolled to the end of the page
+  if (scrollPosition + viewportHeight >= mainContentHeight) {
+    // Show the footer
+    footer.classList.add("show-footer");
+  } else {
+    // Hide the footer
+    footer.classList.remove("show-footer");
+  }
+});

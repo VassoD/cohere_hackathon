@@ -4,6 +4,9 @@ body {
     font-family: 'Prompt', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {
@@ -39,7 +42,7 @@ form {
     margin: 0 auto;
     overflow-y: scroll;
     /* style scroll overflow */
-    height: 300px;
+    height: 400px;
 }
 
 nav {
@@ -68,17 +71,27 @@ nav {
 .container {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    /* align-items: center; */
+    /* flex-direction: row; */
+    margin-bottom: 2em;
+    width: 70%;
+    margin-top: 2em;
 }
 
 
 .picture {
-    width: 40%;
+    float: left;
+    width: 30%;
     margin: 2em 2em 0 0;
+    height: 300px;
+
 }
 
 .text-content {
-    width: 60%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .lead {
@@ -159,10 +172,11 @@ footer {
     padding: 1em;
     text-align: center;
     width: 100%;
-    position: relative;
     bottom: 0;
+    position: relative;
     left: 0;
     right: 0;
+    margin-top: auto;
 }
 
 
@@ -203,6 +217,7 @@ a:hover,
 .calltoaction {
     width: 200px;
     cursor: pointer;
+    margin-top: 2em;
 }
 
 .center {
@@ -211,4 +226,15 @@ a:hover,
     align-items: center;
     flex-direction: column;
     margin-top: 1em;
+}
+
+.imgnewsboy {
+    display: block;
+    ;
+    margin: 3em auto;
+    width: 68%;
+}
+
+.calltoaction {
+    margin-bottom: 1em;
 }
