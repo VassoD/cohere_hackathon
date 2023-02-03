@@ -3,9 +3,11 @@ import praw
 # from flask import jsonify
 # from threading import Thread
 import datetime
-from config import API_KEY
+import os
+# from config import API_KEY
 import cohere 
 
+API_KEY = os.environ.get("API_KEY")
 co = cohere.Client(API_KEY)
 
 app = Flask(__name__)
