@@ -14,7 +14,9 @@
   <script src="../static/main.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="../static/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
@@ -23,7 +25,8 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url_for('home') }}">Newsboy</a>
+    <a class="navbar-brand" href="{{ url_for('home') }}"><img class="logo" src="../static/images/logo.png"
+        alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -34,7 +37,8 @@
           <a class="nav-link" href="{{ url_for('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('newsboy') }}">Newsboy</a>
+          <a class="nav-link" href="{{ url_for('newsboy') }}"><img class="logo" src="../static/images/nblogo.png"
+              alt="logo" width="30px">Newsboy</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('ethics') }}">Sentient Ethics</a>

@@ -70,7 +70,6 @@ nav {
 
 .container {
     display: flex;
-    justify-content: flex-start;
     /* align-items: center; */
     /* flex-direction: row; */
     margin-bottom: 2em;
@@ -83,8 +82,9 @@ nav {
     float: left;
     width: 30%;
     margin: 2em 2em 0 0;
+    max-width: 100%;
+    object-fit: contain;
     height: 300px;
-
 }
 
 .text-content {
@@ -239,4 +239,12 @@ a:hover,
 
 .calltoaction {
     margin-bottom: 1em;
+}
+
+.logo{
+    margin: 0 0.5em;
+}
+
+#navbarNav{
+    margin-left: 50%;
 }

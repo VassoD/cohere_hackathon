@@ -66,12 +66,8 @@ $(document).ready(function () {
 // });
 
 
-const links = document.querySelectorAll('.nav-item');
-const currentPath = window.location.pathname;
-
-links.forEach(link => {
-  if (link.getAttribute('href') === currentPath) {
-    link.classList.add('active');
-  }
+$(document).ready(function(){
+  $(".navbar-toggler").click(function(){
+    $(".navbar-collapse").slideToggle();
+  });
 });
-
