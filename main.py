@@ -60,13 +60,17 @@ def search_articles(search_query):
     matching_articles = []
     prediction = co.classify(model='large', inputs=[search_query], examples=examples).classifications[0].prediction
     
-    tech_keywords = ['technology', 'tech', 'mobiles', 'mobile', 'electronics', 'apple', 'samsung', 'huawei']
-    business_keywords = ['business', 'economy', 'finance', 'banks', 'banks']
-    health_keywords = ['health', 'medicine', 'disease', 'medical', 'hospital', 'doctor', 'virus', 'vaccine']
-    ukraine_keywords = ['ukraine', 'russia', 'war']
-    worldnews_keywords = ['world', 'news', 'worldnews', 'world news', 'world new', 'countries']
+    # some examples from each category but not enough (We will need datasets for later to do the prediction of the user's search query into a category)
+    tech_keywords = ['technology', 'tech', 'mobiles', 'mobile', 'electronics', 'apple', 'samsung', 'huawei', 'gadget', 'smartphone', 'vr', 'augmented reality', 'ar', 'wearables'
+                    'computer', 'tablets', 'tablet', 'innovation', 'innovative', 'devices', 'device', 'internet of things', 'iot', 'virtual reality', 'ar',
+                    'cyber security', 'artificial', 'ai', 'big data', 'blockchain', 'cloud computing',
+                    'data center', 'machine', 'internet', '5g', 'robotics', 'drones', 'chatgpt', 'cohere']
+    business_keywords = ['business', 'economy', 'finance', 'banks', 'banks', 'investment', 'market', 'stock', 'startup', 'entrepreneurship', 'mergers', 'acquisitions', 'corporation', 'industry', 'commercial', 'trade', 'money', 'euro']
+    health_keywords = ['health', 'medicine', 'disease', 'medical', 'hospital', 'doctor', 'virus', 'vaccine', 'cure', 'illness', 'symptoms', 'diseases', 'medical treatment', 'medical research', 'healthcare', 'pharmaceutical', 'drugs']
+    ukraine_keywords = ['ukraine', 'russia', 'war', 'politics', 'government', 'ukrainian', 'kiev', 'crimea']
+    worldnews_keywords = ['world', 'worldnews', 'countries', 'international', 'global', 'events', 'affairs', 'foreign', 'headlines']
     climateNews_keywords = ['climate', 'climate change', 'global warming', 'environment', 'environmental']
-    covid_keywords = ['covid', 'coronavirus', 'pandemic', 'virus', 'vaccine']
+    covid_keywords = ['covid', 'covid19', 'coronavirus', 'pandemic', 'virus', 'vaccine', 'corona']
 
     subreddits_to_search = []
     if any(word in search_query.lower() for word in tech_keywords):
