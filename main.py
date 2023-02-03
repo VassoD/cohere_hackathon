@@ -31,57 +31,6 @@ examples = [
 ]
 
 
-
-# def predict_sentiment(text):
-#     # predict the sentiment of the text using the cohere API
-#     response = co.classify(
-#         model='large',
-#         inputs=[text],
-#         examples=examples
-#     )
-#     for classification in response.classifications:
-#         prediction = classification.prediction
-#     return prediction
-
-
-# def predict_input(search_query):
-#     response = co.classify(
-#         model='large',
-#         inputs=[search_query],
-#         examples=examples
-#     )
-#     for classification in response.classifications:
-#         prediction = classification.prediction
-#     return prediction
-
-# def search_articles(prediction):
-#     reddit = praw.Reddit(client_id="f1ecYWIeukFQEEOPHjdtkA",
-#                          client_secret="KIbEIfhjYb1tfczA9sj3qlV95Fe7WA",
-#                          user_agent="praw_scraper_1.0")
-#     subreddit_mapping = {"technews": "Tech News","Coronavirus": "Covid 19 News"} 
-
-#     matching_articles = []
-#     for subreddit in subreddit_mapping.keys():
-#         subreddit = reddit.subreddit(subreddit)
-#         for submission in subreddit.new(limit=100):
-#             response = co.classify(
-#                 model='large',
-#                 inputs=[submission.title],
-#                 examples=examples
-#             )
-#             for classification in response.classifications:
-#                 article_prediction = classification.prediction
-#             if prediction == article_prediction:
-#                 date = datetime.datetime.fromtimestamp(submission.created_utc)
-#                 formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
-#                 article = {
-#                     "title": submission.title,
-#                     "date": formatted_date,
-#                     "subreddit": subreddit_mapping[subreddit.display_name],
-#                     "url": submission.url
-#                     }
-#                 matching_articles.append(article)
-#                 return matching_articles
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
@@ -101,12 +50,14 @@ def search_articles(search_query):
     matching_articles = []
     prediction = co.classify(model='large', inputs=[search_query], examples=examples).classifications[0].prediction
     
-    tech_keywords = ['technology', 'tech', 'electronics', 'apple', ]
-    business_keywords = ['business', 'economy', 'finance']
-    health_keywords = ['health', 'medicine', 'disease', 'medical', 'covid', 'coronavirus']
-    ukraine_keywords = ['Ukraine', 'Russia']
-    
-    
+    tech_keywords = ['technology', 'tech', 'mobiles', 'mobile', 'electronics', 'apple', 'samsung', 'huawei']
+    business_keywords = ['business', 'economy', 'finance', 'banks', 'banks']
+    health_keywords = ['health', 'medicine', 'disease', 'medical', 'hospital', 'doctor', 'virus', 'vaccine']
+    ukraine_keywords = ['ukraine', 'russia', 'war']
+    worldnews_keywords = ['world', 'news', 'worldnews', 'world news', 'world new', 'countries']
+    climateNews_keywords = ['climate', 'climate change', 'global warming', 'environment', 'environmental']
+    covid_keywords = ['covid', 'coronavirus', 'pandemic', 'virus', 'vaccine']
+
     subreddits_to_search = []
     if any(word in search_query.lower() for word in tech_keywords):
         subreddits_to_search.append('technews')
@@ -114,6 +65,17 @@ def search_articles(search_query):
         subreddits_to_search.append('business')
     if any(word in search_query.lower() for word in health_keywords):
         subreddits_to_search.append('Health')
+    if any(word in search_query.lower() for word in ukraine_keywords):
+        subreddits_to_search.append('UkraineWarVideoReport')
+    if any(word in search_query.lower() for word in ukraine_keywords):
+        subreddits_to_search.append('UkraineWarVideoReport')
+    if any(word in search_query.lower() for word in worldnews_keywords):
+        subreddits_to_search.append('worldnews')
+    if any(word in search_query.lower() for word in climateNews_keywords):
+        subreddits_to_search.append('ClimateNews')
+    if any(word in search_query.lower() for word in covid_keywords):
+        subreddits_to_search.append('Coronavirus')
+
     # for subreddit in subreddit_mapping.keys():
     #     subreddit = reddit.subreddit(subreddit)
     for subreddit in subreddits_to_search:
@@ -135,36 +97,6 @@ def search_articles(search_query):
                 )
     return matching_articles, prediction
 
-
-# def search_articles(search_query):
-#     reddit = praw.Reddit(client_id="f1ecYWIeukFQEEOPHjdtkA",
-#                          client_secret="KIbEIfhjYb1tfczA9sj3qlV95Fe7WA",
-#                          user_agent="praw_scraper_1.0")
-#     # subreddit_mapping = {"technews": "Tech News", "UkraineWarVideoReport": "Ukrain War Report","worldnews": "World News","ClimateNews": "Climate News","Coronavirus": "Covid 19 News","business": "Business News","Health": "Health News"}
-#     subreddit_mapping = {"technews": "Tech News","Coronavirus": "Covid 19 News"} 
-
-#     matching_articles = []
-#     prediction = ""
-#     for subreddit in subreddit_mapping.keys():
-#         subreddit = reddit.subreddit(subreddit)
-#         for submission in subreddit.new(limit=100):
-#             if search_query.lower() in submission.title.lower():
-#                 response = co.classify(
-#                     model='large',
-#                     inputs=[submission.title],
-#                     examples=examples
-#                 )
-#                 for classification in response.classifications:
-#                     prediction = classification.prediction
-#                 if prediction == "positive":
-#                     date = datetime.datetime.fromtimestamp(submission.created_utc)
-#                     formatted_date = date.strftime("%d-%m-%Y %H:%M:%S")
-#                     matching_articles.append(
-#                         {"title": submission.title, "id": submission.id, "category": subreddit_mapping[submission.subreddit.display_name],
-#                          "score": submission.score, "url": submission.url, "date": formatted_date}
-#                     )
-#                     # return jsonify({'prediction': prediction})
-#     return matching_articles, prediction
 
 @app.route("/ethics")
 def ethics():

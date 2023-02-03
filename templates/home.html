@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Search News</h1>
-<form action="/" method="POST">
-  <label for="search_query" class="search-icon"></label>
-  <i class="fas fa-search"></i>
-
-  <input type="text" id="search_query" name="search_query" value="Generate a News Headline" autocomplete="off">
-  <input type="submit" id="search-submit" value="Search">
-</form>
+<div class="center">
+  <img src="../static/images/newsboy.png" alt="Newsboy" class="center" width="300px">
+</div>
+  <form action="/" method="POST">
+    <label for="search_query" class="search-icon"></label>
+    <i class="fas fa-search"></i>
+    <input type="text" id="search_query" name="search_query" value="Generate a News Headline" autocomplete="off">
+    <input type="submit" id="search-submit" value="Search">
+  </form>
 {% if articles %}
 <div id="results_box">
   <p>Results: {{ articles|length }} articles found</p>

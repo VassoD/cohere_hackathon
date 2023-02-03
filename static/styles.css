@@ -157,10 +157,12 @@ footer {
     background-color: #DCDBDC;
     color: #83A7B0;
     padding: 1em;
-    position: absolute;
-    bottom: 0;
     text-align: center;
     width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 
@@ -198,7 +200,15 @@ a:hover,
     border: 1px solid #ccc;
 } */
 
-.calltoaction{
+.calltoaction {
     width: 200px;
     cursor: pointer;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em;
 }
