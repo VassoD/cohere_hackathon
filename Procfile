@@ -1,1 +1,1 @@
-web: gunicorn main:cohere_hackathon
+web: gunicorn main:app
