@@ -4,10 +4,10 @@ import praw
 # from threading import Thread
 import datetime
 import os
-from config import API_KEY
+# from config import API_KEY
 import cohere 
 
-# API_KEY = os.environ.get("API_KEY")
+API_KEY = os.environ.get("API_KEY")
 co = cohere.Client(API_KEY)
 
 app = Flask(__name__)
