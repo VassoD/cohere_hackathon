@@ -242,3 +242,18 @@ a:hover,
 #navbarNav{
     margin-left: 50%;
 }
+
+#spinner {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.2rem;
+    color: #B08383;
+  }
+
+  

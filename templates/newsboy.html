@@ -4,14 +4,20 @@
 <div class="center">
   <img src="../static/images/newsboy2.png" alt="Newsboy" width="200px">
 </div>
-<form action="/newsboy" method="POST">
+<form action="/newsboy" method="POST" onsubmit="startSpinner()">
   <label for="search_query" class="search-icon"></label>
   <i class="fas fa-search"></i>
   <input type="text" id="search_query" name="search_query" value="Generate a News Headline" autocomplete="off">
   <input type="submit" id="search-submit" value="Search">
 </form>
-{% if articles %}
+
 <div id="results_box">
+  <div id="spinner">
+    <div class="spinner-border" role="status">
+    </div>
+  </div>
+
+  {% if articles %}
   <p>Results: {{ articles|length }} articles found</p>
   <ul class="articles">
     {% for article in articles %}
@@ -23,7 +29,14 @@
       </div>
     </div>
     {% endfor %}
-    {% endif %}
   </ul>
+  {% endif %}
 </div>
+
+<script>
+function startSpinner() {
+  document.getElementById("spinner").style.display = "block";
+}
+</script>
 {% endblock %}
+

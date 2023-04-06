@@ -4,15 +4,16 @@ import praw
 # from threading import Thread
 import datetime
 import os
-# from config import API_KEY
+from config import API_KEY
 import cohere 
 
-API_KEY = os.environ.get("API_KEY")
+# API_KEY = os.environ.get("API_KEY")
 co = cohere.Client(API_KEY)
 
 app = Flask(__name__)
 
-from cohere.classify import Example
+from cohere.responses.classify import Example
+
 
 examples = [
   Example("The order came 5 days early", "positive"), 
@@ -32,7 +33,6 @@ examples = [
   Example("The product arrived yesterday", "neutral"),
 ]
 
-
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -47,7 +47,7 @@ def newsboy():
         search_query = request.form["search_query"]
         matching_articles, prediction = search_articles(search_query)
         total_articles = len(matching_articles)
-        return render_template("newsboy.html", articles=matching_articles, total_articles=total_articles, prediction=prediction)
+        return render_template("newsboy.html", articles=matching_articles, total_articles=total_articles, prediction=prediction, spinner=True)
     return render_template("newsboy.html")
 
 def search_articles(search_query):
@@ -118,6 +118,7 @@ def manifesto():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
 
 
 if __name__ == "__main__":
