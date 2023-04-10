@@ -1,4 +1,4 @@
-Flask==2.2.2
-praw==7.6.1
-cohere==3.2.3
+Flask==2.2.3
+praw==7.7.0
+cohere==4.1.4
 gunicorn>=19.5.0
