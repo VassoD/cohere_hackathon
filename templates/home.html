@@ -1,54 +1,101 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="container">
-  <img class="picture" src="../static/images/sentientai.png" alt="A picture representing your team or mission">
+  <img
+    class="picture"
+    src="../static/images/sentientai.png"
+    alt="A picture representing your team or mission"
+  />
   <div class="text-content">
     <div class="title">
-      <img class="icon" src="../static/images/sentienticon.png" alt="Sentient icon">
-      <p class="text-muted" style="text-decoration: underline;">ABOUT</p>
+      <img
+        class="icon"
+        src="../static/images/sentienticonblack.png"
+        alt="Sentient icon"
+      />
+      <p class="text-muted" style="text-decoration: underline">ABOUT</p>
     </div>
-    <p class="lead">Bridging the gap between human empathy and machine thinking.</p>
-    <p class="text-muted">We are a team of passionate disruptors around the world interested in building a better,
-      more inspiring and empathetic future through the ethical use of AI technology.</p>
+    <p class="lead">
+      Bridging the gap between human empathy and machine thinking.
+    </p>
+    <p class="text-muted">
+      We are a team of passionate disruptors around the world interested in
+      building a better, more inspiring and empathetic future through the
+      ethical use of AI technology.
+    </p>
   </div>
 </div>
 <div class="center">
-  <h3 style="text-decoration: underline;">AI Softwares</h3>
-  <a target="_blank" href="{{ url_for('newsboy') }}"><img class="imgnewsboy" src="../static/images/newsboybtn.png"
-      alt="newsboy" width="68%"></a>
+  <h3 style="text-decoration: underline">AI Softwares</h3>
+  <a target="_blank" href="{{ url_for('newsboy') }}"
+    ><img
+      class="imgnewsboy"
+      src="../static/images/newsboybtn.png"
+      alt="newsboy"
+      width="68%"
+  /></a>
 </div>
 
 <div class="container">
-  <img class="picture" src="../static/images/ethics.png" alt="doc img" width="300px">
+  <img
+    class="picture"
+    src="../static/images/ethics.png"
+    alt="doc img"
+    width="300px"
+  />
   <div class="text-content">
     <div class="title">
-      <img class="icon" src="../static/images/sentienticon.png" alt="Sentient icon">
-      <p class="text-muted" style="text-decoration: underline;">ETHICS</p>
+      <img
+        class="icon"
+        src="../static/images/sentienticon.png"
+        alt="Sentient icon"
+      />
+      <p class="text-muted" style="text-decoration: underline">ETHICS</p>
     </div>
 
     <p class="lead">Responsible innovation is a collaborative endeavour.</p>
-    <p class="text-muted">To disrupt means to interrupt a system by causing a disturbance. We intend to not only
-      reinvent structures, but also help provide a guideline on how to innovate holistically taking all the
-      prominent risks of technology into consideration.</p>
-    <a target="_blank" href="{{ url_for('ethics') }}"><img class="calltoaction" src="../static/images/btnethics.png"
-        alt="call to action"></a>
+    <p class="text-muted">
+      To disrupt means to interrupt a system by causing a disturbance. We intend
+      to not only reinvent structures, but also help provide a guideline on how
+      to innovate holistically taking all the prominent risks of technology into
+      consideration.
+    </p>
+    <a target="_blank" href="{{ url_for('ethics') }}"
+      ><img
+        class="calltoaction"
+        src="../static/images/btnethics.png"
+        alt="call to action"
+    /></a>
   </div>
 </div>
 <div class="container">
-  <img class="picture" src="../static/images/manifesto.png" alt="doc img" width="300px">
+  <img
+    class="picture"
+    src="../static/images/manifesto.png"
+    alt="doc img"
+    width="300px"
+  />
   <div class="text-content">
     <div class="title">
-      <img class="icon" src="../static/images/sentienticon.png" alt="Sentient icon">
-      <p class="text-muted" style="text-decoration: underline;">MANIFESTO</p>
+      <img
+        class="icon"
+        src="../static/images/sentienticonpink.png"
+        alt="Sentient icon"
+      />
+      <p class="text-muted" style="text-decoration: underline">MANIFESTO</p>
     </div>
 
     <p class="lead">United by the cause of fostering sustainable innovation.</p>
-    <p class="text-muted">Once upon a time we lived in a world where humans were only able to provide instructions
-      to machines. Now machines talk back to humans and we are seeing a revolution happen in front of our eyes.
+    <p class="text-muted">
+      Once upon a time we lived in a world where humans were only able to
+      provide instructions to machines. Now machines talk back to humans and we
+      are seeing a revolution happen in front of our eyes.
     </p>
-    <a target="_blank" href="{{ url_for('manifesto') }}"><img class="calltoaction"
-        src="../static/images/btnmanifesto.png" alt="call to action"></a>
+    <a target="_blank" href="{{ url_for('manifesto') }}"
+      ><img
+        class="calltoaction"
+        src="../static/images/btnmanifesto.png"
+        alt="call to action"
+    /></a>
   </div>
 </div>
 {% endblock %}
