@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap");
 
 body {
-  font-family: "Prompt", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -244,11 +241,33 @@ a:hover,
   border: 1px solid #ccc;
 }
 
+.badge,
+.example {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1em;
+  padding: 10px 15px;
+  color: #f2f2f2;
+  background-color: #f8f8f8;
+}
+
 .button-text {
   color: #000;
 }
+
 .button-text:hover {
   color: #83a7b0;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 0.5em;
+  align-items: center;
+  margin: 1em 0;
 }
 
 .img-content {
@@ -284,4 +303,9 @@ a:hover,
   height: 3rem;
   border-width: 0.2rem;
   color: #b08383;
+}
+
+.badge .text-muted {
+  font-size: medium;
+  font-weight: 400;
 }

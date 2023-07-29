@@ -1,7 +1,39 @@
 {% extends "base.html" %} {% block content %}
+<div class="center" style="margin: 2rem">
+  <h3 style="color: #83a7b0; font-weight: 300" ;>How to use Newsboy</h3>
+  <p class="text-muted">
+    We currently support a limited amount of news categories.
+  </p>
+  <div class="categories">
+    <div class="badge">
+      <div class="text-muted">Technology</div>
+    </div>
+    <div class="badge">
+      <div class="text-muted">AI</div>
+    </div>
+    <div class="badge">
+      <div class="text-muted">Business</div>
+    </div>
+    <div class="badge">
+      <div class="text-muted">Health</div>
+    </div>
+    <div class="badge">
+      <div class="text-muted">Climate change</div>
+    </div>
+    <div class="badge">
+      <div class="text-muted">International affairs</div>
+    </div>
+  </div>
+  <div class="example" style="padding-bottom: 0px">
+    <p class="text-muted">
+      <span style="font-weight: bolder">Prompt example:</span> “Search for a
+      positive <span style="font-weight: bolder">[technology]</span> news"
+    </p>
+  </div>
+</div>
 <div class="center">
   <img
-    src="../static/images/newsboyillustration.svg"
+    src="../static/images/newsboyillustration.png"
     alt="Newsboy"
     width="200px"
   />
@@ -44,9 +76,4 @@
   {% endif %}
 </div>
 
-<script>
-  function startSpinner() {
-    document.getElementById("spinner").style.display = "block";
-  }
-</script>
 {% endblock %}
