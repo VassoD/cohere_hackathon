@@ -2,14 +2,14 @@
 <div class="container">
   <img
     class="picture"
-    src="../static/images/sentientai.png"
-    alt="A picture representing your team or mission"
+    src="../static/images/sentientai.svg"
+    alt="generatedimg"
   />
   <div class="text-content">
     <div class="title">
       <img
         class="icon"
-        src="../static/images/sentienticonblack.png"
+        src="../static/images/blackfeather.png"
         alt="Sentient icon"
       />
       <p class="text-muted" style="text-decoration: underline">ABOUT</p>
@@ -26,76 +26,96 @@
 </div>
 <div class="center">
   <h3 style="text-decoration: underline">AI Softwares</h3>
-  <a target="_blank" href="{{ url_for('newsboy') }}"
+  <div class="component">
+    <div class="img-content">
+      <img src="../static/images/newsboy.svg" alt="newsboy" />
+    </div>
+    <div class="text-content">
+      <h4>Newsboy</h4>
+      <div class="text-content-2">
+        <p class="text-muted">
+          Generate relevant, reliable and accurate news from the biggest news
+          outlet in the world.
+        </p>
+      </div>
+    </div>
+      <div class="button">
+        <a class="button-text" target="_blank" href="{{ url_for('newsboy') }}">Try Newsboy</a>
+      </div>
+    </div>
+    <!-- <a target="_blank" href="{{ url_for('newsboy') }}"
     ><img
       class="imgnewsboy"
       src="../static/images/newsboybtn.png"
       alt="newsboy"
       width="68%"
-  /></a>
-</div>
-
-<div class="container">
-  <img
-    class="picture"
-    src="../static/images/ethics.png"
-    alt="doc img"
-    width="300px"
-  />
-  <div class="text-content">
-    <div class="title">
-      <img
-        class="icon"
-        src="../static/images/sentienticon.png"
-        alt="Sentient icon"
-      />
-      <p class="text-muted" style="text-decoration: underline">ETHICS</p>
-    </div>
-
-    <p class="lead">Responsible innovation is a collaborative endeavour.</p>
-    <p class="text-muted">
-      To disrupt means to interrupt a system by causing a disturbance. We intend
-      to not only reinvent structures, but also help provide a guideline on how
-      to innovate holistically taking all the prominent risks of technology into
-      consideration.
-    </p>
-    <a target="_blank" href="{{ url_for('ethics') }}"
-      ><img
-        class="calltoaction"
-        src="../static/images/btnethics.png"
-        alt="call to action"
-    /></a>
+  /></a> -->
   </div>
-</div>
-<div class="container">
-  <img
-    class="picture"
-    src="../static/images/manifesto.png"
-    alt="doc img"
-    width="300px"
-  />
-  <div class="text-content">
-    <div class="title">
-      <img
-        class="icon"
-        src="../static/images/sentienticonpink.png"
-        alt="Sentient icon"
-      />
-      <p class="text-muted" style="text-decoration: underline">MANIFESTO</p>
-    </div>
 
-    <p class="lead">United by the cause of fostering sustainable innovation.</p>
-    <p class="text-muted">
-      Once upon a time we lived in a world where humans were only able to
-      provide instructions to machines. Now machines talk back to humans and we
-      are seeing a revolution happen in front of our eyes.
-    </p>
-    <a target="_blank" href="{{ url_for('manifesto') }}"
-      ><img
-        class="calltoaction"
-        src="../static/images/btnmanifesto.png"
-        alt="call to action"
-    /></a>
+  <div class="container">
+    <img
+      class="picture"
+      src="../static/images/ethics.svg"
+      alt="doc img"
+      width="300px"
+    />
+    <div class="text-content">
+      <div class="title">
+        <img
+          class="icon"
+          src="../static/images/bluefeather.svg"
+          alt="Sentient icon"
+        />
+        <p class="text-muted" style="text-decoration: underline">ETHICS</p>
+      </div>
+
+      <p class="lead">Responsible innovation is a collaborative endeavour.</p>
+      <p class="text-muted">
+        To disrupt means to interrupt a system by causing a disturbance. We
+        intend to not only reinvent structures, but also help provide a
+        guideline on how to innovate holistically taking all the prominent risks
+        of technology into consideration.
+      </p>
+      <a target="_blank" href="{{ url_for('ethics') }}"
+        ><img
+          class="calltoaction"
+          src="../static/images/btnethics.svg"
+          alt="call to action"
+      /></a>
+    </div>
   </div>
+  <div class="container">
+    <img
+      class="picture"
+      src="../static/images/manifesto.svg"
+      alt="doc img"
+      width="300px"
+    />
+    <div class="text-content">
+      <div class="title">
+        <img
+          class="icon"
+          src="../static/images/pinkfeather.svg"
+          alt="Sentient icon"
+        />
+        <p class="text-muted" style="text-decoration: underline">MANIFESTO</p>
+      </div>
+
+      <p class="lead">
+        United by the cause of fostering sustainable innovation.
+      </p>
+      <p class="text-muted">
+        Once upon a time we lived in a world where humans were only able to
+        provide instructions to machines. Now machines talk back to humans and
+        we are seeing a revolution happen in front of our eyes.
+      </p>
+      <a target="_blank" href="{{ url_for('manifesto') }}"
+        ><img
+          class="calltoaction"
+          src="../static/images/btnmanifesto.svg"
+          alt="call to action"
+      /></a>
+    </div>
+  </div>
+  {% endblock %}
 </div>
-{% endblock %}
